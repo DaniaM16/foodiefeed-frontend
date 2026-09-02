@@ -1,11 +1,17 @@
 <h1>Neuen Foodie adden</h1>
 
-<form>
+<form [formGroup]="form">
+
     <label for="name"> Name</label>
-    <input type="text" id="name" name="name">
+    <input 
+    type="text" 
+    id="name" 
+    formControlName="nameControl">
 
     <label for="category">Kategorie</label>
-    <select id="category" name="category">
+    <select 
+    id="category" 
+    formControlName="categoryControl">
 <option value="cafe">Café</option>
 <option value="restaurant">Restaurant</option>
 <option value="bar">Bar</option>
@@ -15,10 +21,15 @@
     </select>
 
 <label for="district">Stadtteil</label>
-<input type="text" id="district" name="district">
+<input 
+type="text" 
+id="district" 
+formControlName="districtControl">
 
 <label for="rating">Rating</label>
-<select name="rating" id="rating">
+<select 
+formControlName="ratingControl" 
+id="rating">
 <option value="1">1 Stern</option>
 <option value="2">2 Stern</option>
 <option value="3">3 Stern</option>
@@ -27,13 +38,21 @@
 </select>
 
 <label for="comment">Kommentar</label>
-<textarea name="comment" id="comment"></textarea>
+<textarea 
+formControlName="commentControl" 
+id="comment"></textarea>
 
 <label for="date">Besuchsdatum</label>
-<input type="date" id="date" name="date">
+<input 
+type="date" 
+id="date" 
+formControlName="dateControl">
 
 <label for="recommend">
-    <input type="checkbox" id="recommend" name="recommend">
+    <input 
+    type="checkbox" 
+    id="recommend" 
+    formControlName="recommendControl">
     Approved für Wiederholung  
 </label>
 
