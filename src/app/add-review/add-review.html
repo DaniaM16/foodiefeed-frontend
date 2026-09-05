@@ -19,20 +19,42 @@
 
 <div class="mb-3">  
     <label for="category" class="form-label">Kategorie</label>
-    <input
+    <select
     id="category" 
     type="text"
     class="form-control"
     formControlName="categoryControl">
-    </div>
+
+    <option value="">Kategorie auswählen</option>
+    <option value="Café">Café</option>
+    <option value="Restaurant">Restaurant</option>
+    <option value="Bar">Bar</option>
+    <option value="Imbiss">Imbiss</option>
+    <option value="Lernspot">Lernspot</option>
+    <option value="Bäckerei">Bäckerei</option>
+    <option value="Sonstiges">Sonstiges</option>
+</select>
+</div>
 
 
     <div> class="mb-3">
         <label for="district" class="form-label">Stadtteil</label>
-   <input type="text"
+   <select
    id="district"
    class="form-control"
    formControlName="districtControl">
+
+   <option value="">Stadtteil auswählen</option>
+   <option value="Mitte">Mitte</option>
+   <option value="Friedrichshain">Friedrichshain</option>
+   <option value="Kreuzberg">Kreuzberg</option>
+   <option value="Prenzlauer Berg">Prenzlauer Berg</option>
+   <option value="Neukölln">Neukölln</option>
+   <option value="Charlottenburg">Charlottenburg</option>
+   <option value="Schöneberg">Schöneberg</option>
+<option value="Köpenick">Köpenick</option>
+<option value="Sonstiges">Sonstiges</option>
+</select>
     </div>
 
   
@@ -44,10 +66,10 @@
    class="form-select"
    formControlName="ratingControl">
    <option value="1"> ⭐️ </option>
-    <option value="2"> ⭐️ </option>
-    <option value="3"> ⭐️ </option>
-    <option value="4"> ⭐️ </option>
-    <option value="5"> ⭐️ </option>
+    <option value="2"> ⭐️⭐️ </option>
+    <option value="3"> ⭐️⭐️⭐️ </option>
+    <option value="4"> ⭐️⭐️⭐️⭐️ </option>
+    <option value="5"> ⭐️⭐️⭐️⭐️⭐️ </option>
 </select>
     </div>
 
@@ -89,4 +111,7 @@
     </button>
 </form>
  </div>
+ 
+</div>
     </div>
+
