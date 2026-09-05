@@ -1,12 +1,13 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Backend } from '../shared/backend';
 import { Review } from '../shared/review';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-reviews',
-  imports: [],
-templateUrl: '../reviews/reviews.html',
-styleUrl: '../reviews/reviews.css'
+  imports: [RouterLink],
+templateUrl: './reviews.html',
+styleUrl: './reviews.css'
 })
 export class Reviews implements OnInit{
 
