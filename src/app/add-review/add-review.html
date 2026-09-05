@@ -1,61 +1,87 @@
 <h1>Neuen Foodie adden</h1>
 
-<form [formGroup]="form">
+<div class="container py-4">
+    <h2 class="mb-4"> Review hinzufügen</h2>
 
-    <label for="name"> Name</label>
+<form [formGroup]="form">
+<div class="mb-3"> 
+    <label for="name" class="form-label"> Name</label>
     <input 
+    class="form-control"
     type="text" 
     id="name" 
     formControlName="nameControl">
+</div>
 
-    <label for="category">Kategorie</label>
-    <select 
+<div class="mb-3">  
+    <label for="category" class="form-label">Kategorie</label>
+    <input
     id="category" 
+    type="text"
+    class="form-control"
     formControlName="categoryControl">
-<option value="cafe">Café</option>
-<option value="restaurant">Restaurant</option>
-<option value="bar">Bar</option>
-<option value="studyplace">Studyplace</option>
-<option value="fastfoodie">Fast Foodie</option>
-<option value="sonstiges">Sonstiges</option>
-    </select>
+    </div>
 
-<label for="district">Stadtteil</label>
-<input 
-type="text" 
-id="district" 
-formControlName="districtControl">
 
-<label for="rating">Rating</label>
-<select 
-formControlName="ratingControl" 
-id="rating">
-<option value="1">1 Stern</option>
-<option value="2">2 Stern</option>
-<option value="3">3 Stern</option>
-<option value="4">4 Stern</option>
-<option value="5">5 Stern</option>
+    <div> class="mb-3">
+        <label for="district" class="form-label">Stadtteil</label>
+   <input type="text"
+   id="district"
+   class="form-control"
+   formControlName="districtControl">
+    </div>
+
+  
+    <div> class="mb-3">
+        <label for="rating" class="form-label">Bewertung</label>
+   <select
+
+   id="rating"
+   class="form-select"
+   formControlName="ratingControl">
+   <option value="1"> ⭐️ </option>
+    <option value="2"> ⭐️ </option>
+    <option value="3"> ⭐️ </option>
+    <option value="4"> ⭐️ </option>
+    <option value="5"> ⭐️ </option>
 </select>
+    </div>
 
-<label for="comment">Kommentar</label>
-<textarea 
-formControlName="commentControl" 
-id="comment"></textarea>
 
-<label for="date">Besuchsdatum</label>
-<input 
-type="date" 
-id="date" 
-formControlName="dateControl">
+<div> class="mb-3">
+        <label for="comment" class="form-label">Kommentar</label>
+   <textarea 
+   rows="4"
+   id="comment"
+   class="form-control"
+   formControlName="commentControl">
+   </textarea>
+    </div>
 
-<label for="recommend">
-    <input 
-    type="checkbox" 
-    id="recommend" 
-    formControlName="recommendControl">
-    Approved für Wiederholung  
-</label>
+<div> class="mb-3">
+        <label for="date" class="form-label">Besuchsdatum</label>
+   <input 
+   type="date"
+   id="date"
+   class="form-control"
+   formControlName="dateControl">
+    </div>
 
-    <button type="submit" class="btn btn-primary">Speichern</button>
+
+<div> class="form-check mb-4">
+<input
+ type="checkbox"
+   id="recommend"
+   class="form-check-input"
+   formControlName="recommendControl">
+
+   <label for="recommend" class="form-check-label">
+   Approved für Wiederholung
+ </label>
+    </div>
+
+    <button type="submit" class="btn btn-dark">
+        Review speichern
+    </button>
 </form>
 
