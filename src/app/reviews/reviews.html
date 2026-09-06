@@ -9,7 +9,18 @@
     </div>
 
     <div class="row g-3">
+@if (reviews.length ===0) {
+    <div class="text-center py-5">
+        <h5>Noch keine reviews vorhanden</h5>
+        <p class="text-muted">
+            Füge deinen ersten Food-Spot hinzu.
+        </p>
 
+        <a routerLink="/add-review" class="btn btn-dark">
+            Erstes Review hinzufügen
+        </a>
+    </div>
+}
         @for (review of reviews; track review.id) {
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100">
@@ -26,6 +37,21 @@
 <p class="card-text">
     {{ review.comment }}
 </p>
+
+<p class="card-text mb-1">
+    Besuchsdatum: {{ review.visit_date }}
+</p>
+
+<p class="card-text">
+    Empfehlung:
+    @if (review.recommended) {
+        JA
+    } @else {
+        Nein
+    }
+</p>
+
+
                     </div>
                 </div>
             </div>
