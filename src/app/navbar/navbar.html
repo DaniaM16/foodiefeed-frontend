@@ -1,7 +1,8 @@
-<nav class="navbar <navbar-expand-Ig bg-body-tertiary">
-<div class="container-fluid">
+<nav class="navbar navbar-expand-Ig bg-body-tertiary foodie-sidebar">
+<div class="container-fluid foodie-sidebar-inner">
 
-    <a class="navbar-brand fw-bold" routerlink="/">foodiefeed</a>
+    <a class="navbar-brand fw-bold foodie-logo" routerlink="/">
+        <img src="/foodiefeed-logo.png" alt="foodiefeed Logo"> </a>
 
 <button
     class="navbar-toggler"
@@ -16,13 +17,13 @@
 </button>
 
 
-<div class="collapse navbar-collapse" id="navbarNav">
+<div class="collapse navbar-collapse foodie-nav-wrapper" id="navbarNav">
 
-<div class="navbar-nav ms-auto">
-    <a class="nav-link" routerLink="/">Home</a>
-    <a class="nav-link" routerLink="/reviews">Meine Reviews</a>
-    <a class="nav-link" routerLink="/add-review">Review hinzufügen</a>
-    <a class="nav-link" routerLink="/login">Login</a>
+<div class="navbar-nav ms-auto foodie-nav-list">
+    <a class="foodie-nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">💋 Home</a>
+    <a class="foodie-nav-link" routerLink="/reviews" routerLinkActive="active">👀 Meine Reviews</a>
+    <a class="foodie-nav-link" routerLink="/add-review" routerLinkActive="active">+ Review hinzufügen</a>
+    <a class="foodie-nav-link" routerLink="/login" routerLinkActive="active">👤 Login</a>
 </div>
 </div>
 

@@ -1,0 +1,105 @@
+.foodie-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    background-color: #f6eef3;
+
+    background-image: 
+    repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent 27px,
+            rgba(145, 190, 205, 0.15) 30px
+        ),
+        linear-gradient(
+            to right,
+            transparent 0,
+            transparent 72px,
+            rgba(232, 62, 129, 0.10) 73px,
+            rgba(232, 62, 129, 0.10) 74px,
+            transparent 75px
+        );
+    
+
+    border-right: 1px solid pink;
+    z-index: 1000;
+    padding: 0;
+
+    display: block;
+    align-items: initial;
+
+    .foodie-sidebar-inner {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        padding: 20px 0;
+        margin: 0;
+    }
+
+    .foodie-logo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 1px 0 5px;
+    }
+
+    .foodie-nav-wrapper{
+        display: block !important;
+    }
+
+    .foodie-nav-list {
+        display: flex;
+        flex-direction: column !important;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .foodie-nav-link {
+        color: var(--text);
+        padding: 20px 35px !important;
+        font-size: 17px;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    .foodie-nav-link:hover {
+        background-color: var(pink);
+        color: var(#651238 );
+    }
+
+    .navbar-toggler{
+        display: none;
+    }
+
+    .foodie-sidebar .foodie-nav-link {
+        display: flex;
+        align-items: center;
+        min-height: 82px;
+        padding: 0 28px;
+        margin: 0;
+
+        color: #5c1035;
+        font-size: 20px;
+        text-decoration: none;
+
+    }
+
+    .foodie-sidebar .foodie-nav-link:hover {
+        background-color: rgba(248, 183, 210, 0.45);
+
+    }
+
+     .foodie-nav-link.active {
+        background-color: var(--lightpink) !important;
+    }
+    .foodie-logo img {
+        width: 270px;
+        height: auto;
+        display: block;
+    }
+}
