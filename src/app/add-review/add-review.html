@@ -1,11 +1,14 @@
-<h1>Neuen Foodie adden</h1>
+<h1>  </h1>
 
 <div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-6">
 
+            <div class="review-box">
+                <h2>Neuen foodie hinzufügen</h2>
+
     
-    <h2 class="mb-4"> Review hinzufügen</h2>
+
 
 <form [formGroup]="form">
 <div class="mb-3"> 
@@ -17,7 +20,8 @@
     formControlName="nameControl">
 </div>
 
-<div class="mb-3">  
+<div class="row">  
+    <div class="col-md-6 mb-3">
     <label for="category" class="form-label">Kategorie</label>
     <select
     id="category" 
@@ -37,7 +41,7 @@
 </div>
 
 
-    <div class="mb-3">
+    <div class="col-md-6 mb-3">
         <label for="district" class="form-label">Stadtteil</label>
    <select
    id="district"
@@ -55,6 +59,7 @@
 <option value="Köpenick">Köpenick</option>
 <option value="Sonstiges">Sonstiges</option>
 </select>
+    </div>
     </div>
 
   
@@ -85,16 +90,16 @@
     </div>
 
 <div class="mb-3">
-        <label for="date" class="form-label">Besuchsdatum</label>
+        <label for="visitDate" class="form-label">Besuchsdatum</label>
    <input 
    type="date"
-   id="date"
+   id="visitdate"
    class="form-control"
-   formControlName="dateControl">
+   formControlName="visitDateControl">
     </div>
 
 
-<div class="form-check mb-4">
+<div class="form-check mb-3">
 <input
  type="checkbox"
    id="recommend"
@@ -102,11 +107,11 @@
    formControlName="recommendControl">
 
    <label for="recommend" class="form-check-label">
-   Approved für Wiederholung
+   Würde ich empfehlen? 
  </label>
     </div>
 
-    <button type="submit" class="btn btn-dark">
+    <button type="submit" class="save-button">
         Review speichern
     </button>
 </form>

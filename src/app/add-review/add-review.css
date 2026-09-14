@@ -1,0 +1,38 @@
+.review-box {
+    padding: 30px;
+    background-color: #ffe6f0;
+    border-radius: 20px;
+    margin-top: 40px;
+}
+.review-box h2 {
+    margin-bottom: 5px;
+    font-weight: bold;
+
+}
+.review-box p {
+    margin-bottom: 25px;
+}
+.form-control,
+.form-select {
+    border-radius: 10px;
+    background-color: #fff7fa;
+}
+textarea {
+    resize: none;
+}
+.save-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: #6b123d;
+    color: white;
+    font-weight: 600;
+}
+.save-button:hover {
+    background-color: #85194d;
+}
+.form-label {
+    font-size: 18px;
+    font-weight: 600;
+}
