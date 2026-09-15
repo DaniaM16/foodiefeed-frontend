@@ -15,4 +15,16 @@ export class Backend {
     console.log('Reviews aus dem Backend: ', reviews)
     return reviews;
   }
+  async create(review: Review): Promise<Review> {
+    let response = await fetch(this.apiURL + '/reviews', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(review)
+    });
+
+    let newReview = await response.json();
+    return newReview;
+  }
 }
