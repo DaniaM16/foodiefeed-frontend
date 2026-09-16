@@ -27,4 +27,13 @@ export class Backend {
     let newReview = await response.json();
     return newReview;
   }
+  async deleteOne(id: string): Promise<{message: string}> {
+    let response = await fetch(this.apiURL + '/reviews/' + id, {
+      method: "DELETE"
+    });
+
+    let message = await response.json();
+    console.log('message in service (deleteOne) : ', message)
+    return message;
+  }
 }

@@ -19,4 +19,9 @@ export class Reviews implements OnInit{
     .then(response => this.reviews = response)
     .then(reviews => console.log(' Reviews in Reviews-Komponente: ', reviews ))  ; 
   }
+  delete(id: number) {
+    this.bs.deleteOne(id.toString())
+    .then(() => this.bs.getAll())
+    .then(response => this.reviews = response);
+  }
 }
