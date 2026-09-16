@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Review } from './review';
+import { Reviews } from '../reviews/reviews';
 
 @Injectable({
   providedIn: 'root'
@@ -36,4 +37,17 @@ export class Backend {
     console.log('message in service (deleteOne) : ', message)
     return message;
   }
+
+  async updateOne(id: string, review: Review): Promise<Review> {
+    let response = await fetch(this.apiURL + '/reviews' + id, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(review)
+    });
+    let updatedReview = await response.json();
+    return updatedReview;
+  }
+
 }
