@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Backend } from '../shared/backend';
 import { Review } from '../shared/review';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-reviews',
@@ -12,6 +12,7 @@ styleUrl: './reviews.css'
 export class Reviews implements OnInit{
 
   private bs = inject(Backend)
+  private router = inject(Router)
   reviews: Review[] = [];
 
   ngOnInit(): void {
@@ -23,5 +24,8 @@ export class Reviews implements OnInit{
     this.bs.deleteOne(id.toString())
     .then(() => this.bs.getAll())
     .then(response => this.reviews = response);
+  }
+  edit(id: number) {
+    this.router.navigate(['/edit-review', id]);
   }
 }

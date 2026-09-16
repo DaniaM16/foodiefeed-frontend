@@ -8,5 +8,7 @@ export const routes: Routes = [
     { path: '', component:Home },
     { path: 'reviews', component: Reviews },
     { path: 'login', component: Login },
-    { path: 'add-review', component: AddReview }
+    { path: 'add-review', component: AddReview },
+    { path: 'edit-review/:id', component: AddReview }
+
 ];

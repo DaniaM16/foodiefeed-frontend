@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Backend } from '../shared/backend';
+import { ActivatedRoute } from '@angular/router';
+import { Reviews } from '../reviews/reviews';
 
 @Component({
   selector: 'app-add-review',
@@ -10,7 +12,34 @@ import { Backend } from '../shared/backend';
 })
 export class AddReview {
 
-  constructor(private backend: Backend) {}
+  constructor(
+    private backend: Backend,
+    private route : ActivatedRoute
+  ) {}
+
+  id: string | null = ''
+
+  ngOnInit() {
+    this.id = this.route.snapshot.paramMap.get('id');
+    console.log('ID aus URL:', this.id);
+    
+    if (this.id) {
+      this.backend.getOne(this.id)
+      .then(review => {
+        console.log('Geladenes Review', review);
+        this.form.patchValue({
+          nameControl: review.name,
+          categoryControl: review.category,
+          districtControl: review.district,
+          ratingControl: review.rating.toString(),
+          commentControl: review.comment,
+          dateControl: review.visit_date,
+          recommendControl:review.recommended
+        });
+      });
+    }
+  }
+
 
   form = new FormGroup({
     nameControl: new FormControl<string>(''),

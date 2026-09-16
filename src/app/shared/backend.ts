@@ -16,6 +16,11 @@ export class Backend {
     console.log('Reviews aus dem Backend: ', reviews)
     return reviews;
   }
+  async getOne(id: string): Promise<Review> {
+    let response = await fetch(this.apiURL + '/reviews/' + id);
+    let review = await response.json();
+    return review;
+  }
   async create(review: Review): Promise<Review> {
     let response = await fetch(this.apiURL + '/reviews', {
       method: 'POST',
@@ -39,7 +44,7 @@ export class Backend {
   }
 
   async updateOne(id: string, review: Review): Promise<Review> {
-    let response = await fetch(this.apiURL + '/reviews' + id, {
+    let response = await fetch(this.apiURL + '/reviews/' + id, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
