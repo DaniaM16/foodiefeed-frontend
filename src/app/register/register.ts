@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Backend } from '../shared/backend';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   imports: [ReactiveFormsModule],
@@ -14,7 +14,9 @@ export class Register {
     emailControl: new FormControl<string> (''),
     passwordControl: new FormControl<string> ('')
   });
-  constructor(private backend: Backend) {}
+  constructor(
+    private backend: Backend,
+  private router: Router) {}
 
   async register() {
     const email = this.form.value.emailControl ?? '';
@@ -23,5 +25,6 @@ export class Register {
     const user = await this.backend.register(email, password);
 
     console.log('Registrierter User:', user);
+    this.router.navigate(['/login']);
   }
 }
