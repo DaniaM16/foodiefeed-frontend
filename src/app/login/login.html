@@ -1,3 +1,4 @@
+<form [formGroup]="form">
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-6" >
@@ -10,6 +11,7 @@
                 <input type="email"
                 id="email"
                 class="form-control"
+                formControlName="emailControl"
                 placeholder="E-Mail eingeben">
             </div>
 
@@ -18,14 +20,16 @@
                 <input type="password"
                 id="password"
                 class="form-control"
+                formControlName="passwordControl"
                 placeholder="Passwort eingeben">
             </div>
 
-            <button type="button" class="login-button">
+            <button type="button" class="login-button" (click)="login()">
                 Einloggen
             </button>
         </div>
     </div>
 </div>
 </div>
+</form>
 

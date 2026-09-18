@@ -55,4 +55,21 @@ export class Backend {
     return updatedReview;
   }
 
+  async login(email: string, password: string): Promise<any> {
+    let response = await fetch(this.apiURL + '/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password
+      })
+    } );
+    let user = await response.json();
+
+    return user;
+  }
+
+
 }
