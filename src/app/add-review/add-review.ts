@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Backend } from '../shared/backend';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Reviews } from '../reviews/reviews';
 
 @Component({
@@ -14,7 +14,8 @@ export class AddReview {
 
   constructor(
     private backend: Backend,
-    private route : ActivatedRoute
+    private route : ActivatedRoute,
+    private router: Router 
   ) {}
 
   id: string | null = ''
@@ -69,5 +70,7 @@ export class AddReview {
     } else {
       await this.backend.create(review);
     }
+
+    this.router.navigate(['/reviews']);
   }
 }
