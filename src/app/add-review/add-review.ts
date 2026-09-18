@@ -64,6 +64,10 @@ export class AddReview {
       visit_date: this.form.value.dateControl ?? ''
     };
 
-    await this.backend.create(review);
+    if (this.id) {
+      await this.backend.updateOne(this.id, review);
+    } else {
+      await this.backend.create(review);
+    }
   }
 }
