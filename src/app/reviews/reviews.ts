@@ -27,11 +27,18 @@ export class Reviews implements OnInit{
   
 }
   delete(id: number) {
+    const sicher = confirm('Möchtest du dieses Review nun wirklich löschen?')
+
+    if(sicher) { 
     this.bs.deleteOne(id.toString())
-    .then(() => this.bs.getAll())
-    .then(response => this.reviews = response);
-  }
-  edit(id: number) {
-    this.router.navigate(['/edit-review', id]);
-  }
+    .then(() =>  { 
+      const user = JSON.parse(localStorage.getItem('user') || '{}');
+      return this.bs.getUserReviews(user.id);
+  })
+  .then(response => {
+this.reviews = response;
+this.cdr.detectChanges();
+  });
+}
+  
 }
