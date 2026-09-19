@@ -1,4 +1,4 @@
-<div class="container py-4">
+<div class="reviews-page">
 
     <div class="d-flex justify-content-between align-items-center mb-4" >
         <h2 class="mb-0">Meine Reviews</h2>
@@ -8,10 +8,10 @@
         </a>
     </div>
 
-    <div class="row g-3">
+
 @if (reviews.length ===0) {
     <div class="text-center py-5">
-        <h5>Noch keine reviews vorhanden</h5>
+        <h5>Noch keine Reviews vorhanden</h5>
         <p class="text-muted">
             Füge deinen ersten Food-Spot hinzu.
         </p>
@@ -21,6 +21,7 @@
         </a>
     </div>
 }
+<div class="row g-3">
         @for (review of reviews; track review.id) {
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100">
@@ -31,7 +32,7 @@
 </p>
 
 <p class="card-text mb-1">
-    Bewertung: {{ review.rating }}/5
+    Bewertung: ⭐️ {{ review.rating }}/5
 </p>
 
 <p class="card-text">
@@ -39,15 +40,15 @@
 </p>
 
 <p class="card-text mb-1">
-    Besuchsdatum: {{ review.visit_date }}
+    Besuchsdatum: {{ review.visit_date | date: 'dd.MM.yyyy'}}
 </p>
 
 <p class="card-text">
     Empfehlung:
     @if (review.recommended) {
-        JA
+       💕 JA
     } @else {
-        Nein
+        NEIN
     }
 </p>
 <button class="btn btn-dark" (click)="edit(review.id!)">

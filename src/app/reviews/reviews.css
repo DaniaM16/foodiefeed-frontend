@@ -1,0 +1,19 @@
+.reviews-page {
+    padding: 50px;
+    margin-left: 285px;
+}
+
+.card {
+    border: none;
+    border-radius: 18px;
+    padding: 10px;
+}
+
+.card-title{
+    font-weight: bold;
+}
+
+.btn-dark {
+    background-color: #7a0d3d;
+    border: none;
+}

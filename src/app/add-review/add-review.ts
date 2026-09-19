@@ -56,7 +56,7 @@ export class AddReview {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
 
     const review = {
-      user_id: user.id,
+      user_id: JSON.parse(localStorage.getItem('user') || '{}').id,
       name: this.form.value.nameControl ?? '',
       category: this.form.value.categoryControl ?? '',
       district: this.form.value.districtControl ?? '',

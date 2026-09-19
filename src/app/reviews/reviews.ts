@@ -2,10 +2,10 @@ import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { Backend } from '../shared/backend';
 import { Review } from '../shared/review';
 import { Router, RouterLink } from '@angular/router';
-
+import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-reviews',
-  imports: [RouterLink],
+  imports: [RouterLink, DatePipe],
 templateUrl: './reviews.html',
 styleUrl: './reviews.css'
 })
