@@ -16,6 +16,13 @@ export class Backend {
     console.log('Reviews aus dem Backend: ', reviews)
     return reviews;
   }
+
+async getUserReviews(userId: number): Promise<Review[]> {
+  let response = await fetch(this.apiURL + '/users/' + userId +'/reviews');
+  let reviews = await response.json();
+  return reviews;
+}
+
   async getOne(id: string): Promise<Review> {
     let response = await fetch(this.apiURL + '/reviews/' + id);
     let review = await response.json();
