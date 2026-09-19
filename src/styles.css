@@ -16,3 +16,22 @@ body {
 
 
 }
+
+.sparkle {
+    position: absolute;
+    pointer-events: none;
+    color: hsl(336, 87%, 52%);
+    font-size: 14px;
+    z-index: 9999;
+    animation: sparklefade 0.5s forwards;
+}
+
+@keyframes sparkleFade {
+    0% { opacity: 1;
+    transform: scale(1);
+}
+100% {
+    opacity: 0;
+    transforms: scale(0.3) translateY(-15px);
+}
+}

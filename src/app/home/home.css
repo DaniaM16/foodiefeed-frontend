@@ -15,9 +15,14 @@
 }
 
 .home-btn{
+    display: inline-block;
     background-color: #fff3f7;
     color: #5b1735;
     border: 1px solid #5b1735;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
 
 }
 
@@ -26,17 +31,4 @@
     color: #5b1735;
 }
 
-.home-btn {
-    display:inline-block !important;
-    background-color: #fff3f7 !important;
-    color: #5b1735 ! important;
-    border: 1px solid #5b1735 !important;
-    padding: 8px 14px !important;
-    border-radius: 6px !important;
-    text-decoration: none !important;
-}
 
-.home-btn:hover {
-    background-color: #f8d9e5 !important;
-    color: #5b1735 !important;
-}
