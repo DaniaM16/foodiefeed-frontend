@@ -6,7 +6,7 @@
         <a routerLink="/add-review" class="btn btn-dark">
             Review hinzufügen
         </a>
-    </div>
+    </div> 
 
 
 @if (reviews.length ===0) {
@@ -25,6 +25,10 @@
         @for (review of reviews; track review.id) {
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100 review-card">
+                    @if (review.image) {
+                        <img [src]="'http://localhost:3000/uploads/' + review.image"
+                        class="card-img-top" alt="Foto">
+                    }
                     <div class="card-body">
                         <h5 class="card-title">{{ review.name }}</h5>
 <p class="card-text mb-2">

@@ -8,4 +8,5 @@ export interface Review {
   comment: string;
   recommended: boolean;
   visit_date: string;
+  image?: string;
 }

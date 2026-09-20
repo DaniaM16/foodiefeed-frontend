@@ -20,6 +20,16 @@ export class AddReview {
 
   id: string | null = ''
 
+selectedFile: File | null = null;
+
+onFileSelected(event: Event) {
+  const input = event.target as HTMLInputElement;
+
+  if (input.files && input.files.length > 0) {
+    this.selectedFile = input.files[0];
+  }
+}
+
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
     console.log('ID aus URL:', this.id);
@@ -69,7 +79,7 @@ export class AddReview {
     if (this.id) {
       await this.backend.updateOne(this.id, review);
     } else {
-      await this.backend.create(review);
+      await this.backend.create(review, this.selectedFile);
     }
 
     this.router.navigate(['/reviews']);

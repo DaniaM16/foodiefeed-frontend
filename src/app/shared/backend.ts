@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Review } from './review';
 import { Reviews } from '../reviews/reviews';
+import { form } from '@angular/forms/signals';
 
 @Injectable({
   providedIn: 'root'
@@ -28,18 +29,31 @@ async getUserReviews(userId: number): Promise<Review[]> {
     let review = await response.json();
     return review;
   }
-  async create(review: Review): Promise<Review> {
+  async create(review: Review, image: File | null): Promise<Review> {
+    const formData = new FormData();
+
+    formData.append('user_id', review.user_id!.toString());
+    formData.append('name', review.name);
+    formData.append('category', review.category);
+    formData.append('district', review.district);
+    formData.append('rating', review.rating.toString());
+    formData.append('comment', review.comment);
+    formData.append('recommended', review.recommended.toString());
+    formData.append('visit_date',review.visit_date);
+
+    if (image) {
+      formData.append('image', image);
+    }
+
     let response = await fetch(this.apiURL + '/reviews', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(review)
+      body: formData
     });
 
     let newReview = await response.json();
     return newReview;
   }
+
   async deleteOne(id: string): Promise<{message: string}> {
     let response = await fetch(this.apiURL + '/reviews/' + id, {
       method: "DELETE"

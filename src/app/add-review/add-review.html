@@ -89,6 +89,17 @@
    </textarea>
     </div>
 
+
+
+<div class="mb-3">
+    <label for="image" class="form-label">Foto</label>
+    <input type="file"
+    id="image"
+    class="form-control"
+    accept="image/*"
+    (change)="onFileSelected($event)">
+</div>
+
 <div class="mb-3">
         <label for="visitDate" class="form-label">Besuchsdatum</label>
    <input 

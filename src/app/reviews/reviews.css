@@ -1,6 +1,6 @@
 .reviews-page {
-    padding: 50px;
-    margin-left: 285px;
+    padding: 20px;
+    margin-left: 0;
 }
 
 .card {
@@ -17,3 +17,12 @@
     background-color: #7a0d3d;
     border: none;
 }
+
+@media screen and (min-width: 992px) {
+    
+    .reviews-page {
+        padding: 50px;
+        margin-left: 285px;
+    }
+}
+
