@@ -28,6 +28,12 @@
                 Einloggen
             </button>
 
+            @if (errorMessage) {
+                <p class="text-danger mt-2">
+                    {{ errorMessage }}
+                </p>
+            }
+
             <a routerLink="/register">Noch kein Konto? Registrieren!</a>
         </div>
     </div>

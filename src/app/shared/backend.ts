@@ -19,7 +19,13 @@ export class Backend {
   }
 
 async getUserReviews(userId: number): Promise<Review[]> {
-  let response = await fetch(this.apiURL + '/users/' + userId +'/reviews');
+  const token = localStorage.getItem('token');
+
+  let response = await fetch(this.apiURL + '/users/' + userId + '/reviews', {
+    headers: {
+      'Authorization': 'Bearer ' + token
+    }
+  });
   let reviews = await response.json();
   return reviews;
 }
@@ -45,8 +51,13 @@ async getUserReviews(userId: number): Promise<Review[]> {
       formData.append('image', image);
     }
 
+    const token = localStorage.getItem('token');
+
     let response = await fetch(this.apiURL + '/reviews', {
       method: 'POST',
+      headers: {
+        'Authorization': 'Bearer ' + token 
+      },
       body: formData
     });
 
@@ -55,8 +66,13 @@ async getUserReviews(userId: number): Promise<Review[]> {
   }
 
   async deleteOne(id: string): Promise<{message: string}> {
+    const token = localStorage.getItem('token');
+
     let response = await fetch(this.apiURL + '/reviews/' + id, {
-      method: "DELETE"
+      method: "DELETE",
+      headers:{
+        'Authorization': 'Bearer ' + token
+      }
     });
 
     let message = await response.json();
@@ -65,10 +81,12 @@ async getUserReviews(userId: number): Promise<Review[]> {
   }
 
   async updateOne(id: string, review: Review): Promise<Review> {
+    const token = localStorage.getItem('token');
     let response = await fetch(this.apiURL + '/reviews/' + id, {
       method: 'PUT',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
       },
       body: JSON.stringify(review)
     });
@@ -87,6 +105,11 @@ async getUserReviews(userId: number): Promise<Review[]> {
         password: password
       })
     } );
+
+    if (!response.ok) {
+      throw new Error('Login fehlgeschlagen. E-Mail oder Passwort falsch.')
+    }
+
     let user = await response.json();
 
     return user;

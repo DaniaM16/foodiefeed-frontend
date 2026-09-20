@@ -18,6 +18,9 @@ export class Reviews implements OnInit{
 
   ngOnInit(): void {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
+    console.log('User aus localStorage:', user);
+    console.log('User ID:', user.id);
+
     this.bs.getUserReviews(user.id)
     .then(response => {
       this.reviews = response;
