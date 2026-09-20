@@ -23,7 +23,18 @@
     <a class="foodie-nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">💋 Home</a>
     <a class="foodie-nav-link" routerLink="/reviews" routerLinkActive="active">👀 Meine Reviews</a>
     <a class="foodie-nav-link" routerLink="/add-review" routerLinkActive="active">+ Review hinzufügen</a>
-    <a class="foodie-nav-link" routerLink="/login" routerLinkActive="active">👤 Login</a>
+    
+@if (isLoggedIn()) {
+    <a class="foodie-nav-link" (click)="logout()">
+        👤 Abmelden
+    </a>
+} @else {
+    <a class="foodie-nav-link" routerLink="/login" routerLinkActive="active">
+        👤 Login
+    </a>
+}
+
+
 </div>
 </div>
 

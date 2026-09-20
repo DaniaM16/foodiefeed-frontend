@@ -11,7 +11,6 @@ export const routes: Routes = [
     { path: 'login', component: Login },
     { path: 'add-review', component: AddReview },
     { path: 'edit-review/:id', component: AddReview },
-    { path: 'login', component: Login },
-    { path: 'register', component: Register }
+ { path: 'register', component: Register }
 
 ];

@@ -26,19 +26,37 @@ export class Reviews implements OnInit{
     }); 
   
 }
-  delete(id: number) {
-    const sicher = confirm('Möchtest du dieses Review nun wirklich löschen?')
+  deleteStatus:boolean = false;
+  deleteId: number | null = null;
 
-    if(sicher) { 
-    this.bs.deleteOne(id.toString())
-    .then(() =>  { 
-      const user = JSON.parse(localStorage.getItem('user') || '{}');
-      return this.bs.getUserReviews(user.id);
-  })
-  .then(response => {
-this.reviews = response;
-this.cdr.detectChanges();
-  });
-}
-  
+  edit(id: number) {
+    this.router.navigate(['/edit-review', id]);
+  }
+
+  delete(id: number) {
+    this.deleteId = id;
+    this.deleteStatus = true;
+  }
+
+  cancel(){
+    this.deleteStatus = false;
+    this.deleteId = null;
+  }
+
+  confirm(){
+    if (this.deleteId !== null) {
+      this.bs.deleteOne(this.deleteId.toString())
+      .then(() => {
+        const user = JSON.parse(localStorage.getItem('user') || '{}');
+        return this.bs.getUserReviews(user.id);
+      })
+      .then(response => {
+        this.reviews = response;
+        this.deleteStatus = false;
+        this.deleteId = null;
+        this.cdr.detectChanges();
+          
+      });
+    }
+  }
 }
