@@ -80,15 +80,29 @@ async getUserReviews(userId: number): Promise<Review[]> {
     return message;
   }
 
-  async updateOne(id: string, review: Review): Promise<Review> {
+  async updateOne(id: string, review: Review, image: File | null): Promise<Review> {
     const token = localStorage.getItem('token');
+
+    const formData = new FormData();
+
+    formData.append('name', review.name);
+    formData.append('category', review.category);
+    formData.append('district', review.district);
+    formData.append('rating', review.rating.toString());
+    formData.append('comment', review.comment);
+    formData.append('recommended', review.recommended.toString());
+    formData.append('visit_date', review.visit_date);
+
+    if (image) {
+      formData.append('image', image);
+    }
+
     let response = await fetch(this.apiURL + '/reviews/' + id, {
       method: 'PUT',
       headers: {
-        'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + token
       },
-      body: JSON.stringify(review)
+      body: formData
     });
     let updatedReview = await response.json();
     return updatedReview;
@@ -127,6 +141,9 @@ async getUserReviews(userId: number): Promise<Review[]> {
         password: password
       })
     });
+    if (!response.ok) {
+      throw new Error('E-Mail bereits registriert');
+    }
 
     let user = await response.json();
 

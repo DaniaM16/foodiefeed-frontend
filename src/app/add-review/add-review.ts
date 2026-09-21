@@ -77,7 +77,7 @@ onFileSelected(event: Event) {
     };
 
     if (this.id) {
-      await this.backend.updateOne(this.id, review);
+      await this.backend.updateOne(this.id, review, this.selectedFile);
     } else {
       await this.backend.create(review, this.selectedFile);
     }

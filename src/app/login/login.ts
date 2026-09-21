@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms'
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
 import { email } from '@angular/forms/signals';
 import { Backend } from '../shared/backend';
 import { RouterLink } from '@angular/router';
@@ -16,14 +16,26 @@ export class Login {
   ) {}
 
   form = new FormGroup({
-    emailControl: new FormControl<string>(''),
-    passwordControl: new FormControl<string>('')
+    emailControl: new FormControl<string>('',[
+      Validators.required,
+      Validators.email
+    ]),
+    passwordControl: new FormControl<string>('',[
+      Validators.required,
+      Validators.minLength(8)
+    ])
   });
 
   errorMessage = '';
   
 
   async login() {
+
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+      return;
+    }
+
     const email = this.form.value.emailControl ?? '';
     const password = this.form.value.passwordControl ?? '';
 
