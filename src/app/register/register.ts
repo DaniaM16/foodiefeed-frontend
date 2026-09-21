@@ -26,9 +26,10 @@ export class Register {
   private router: Router) {}
 
   errorMessage = '';
+  showPassword = false;
   
   async register() {
-    
+
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;

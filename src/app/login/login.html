@@ -21,11 +21,20 @@
 
             <div class="mb-4">
                 <label for="password" class="form-label">Passwort</label>
-                <input type="password"
+                <div class="password-field">
+                <input 
+                [type]="showPassword ? 'text' : 'password' "
                 id="password"
                 class="form-control"
                 formControlName="passwordControl"
                 placeholder="Passwort eingeben">
+
+                <button
+                type="button"
+                class="password-eye"
+                (click)="showPassword = !showPassword"> 👁️
+            </button> 
+            </div>
             </div>
 
             @if (form.controls.passwordControl.touched && form.controls.passwordControl.invalid) {

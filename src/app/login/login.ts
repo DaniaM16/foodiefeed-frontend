@@ -27,6 +27,7 @@ export class Login {
   });
 
   errorMessage = '';
+  showPassword = false;
   
 
   async login() {
