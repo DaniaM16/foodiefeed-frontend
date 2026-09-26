@@ -42,10 +42,10 @@
     }
 
     .foodie-logo {
-        width: 100%;
         display: flex;
         justify-content: center;
         padding: 1px 0 5px;
+        
     }
 
     .foodie-nav-wrapper{
@@ -95,24 +95,20 @@
         background-color: var(--lightpink) !important;
     }
     .foodie-logo img {
-        width: 270px;
+        width: 220px;
         height: auto;
         display: block;
     }
 }
 
-    @media screen and (min-width: 992px) {
-       
-        .foodie-sidebar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 260px;
-            height: 100vh;
-        }
+    @media screen and (max-width: 991px) {
 
-        .navbar-toggler {
-            display: none;
+        .foodie-sidebar {
+            width: 100%;
+            height: auto;
+        }
+        .foodie-sidebar .foodie-logo img {
+            width: 300px;
         }
     }
 

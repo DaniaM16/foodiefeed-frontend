@@ -2,6 +2,8 @@
     min-height:calc(100vh - 100px);
     display: flex;
     align-items:center;
+    justify-content: center;
+    margin-left: 190px;
 }
 
 .row{
@@ -16,19 +18,25 @@
 
 .home-btn{
     display: inline-block;
-    background-color: #fff3f7;
-    color: #5b1735;
-    border: 1px solid #5b1735;
+    background-color: #6b123d;
+    color: white;
+    border: 1px solid #6b123d;
     padding: 8px 14px;
     border-radius: 6px;
     text-decoration: none;
     cursor: pointer;
+    font-weight: 600;
 
 }
 
 .home-btn:hover {
-    background-color: #f8d9e5;
-    color: #5b1735;
+    background-color: #85194d;
+    color: white;
 }
 
-
+@media screen and (max-width: 991px) {
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

@@ -34,4 +34,16 @@ body {
     opacity: 0;
     transforms: scale(0.3) translateY(-15px);
 }
+
+
+h1, h2 {
+    color: #5f0b32;
+    font-weight: 700;
+}
+}
+
+@media screen and (max-width: 768px) {
+
+    
+
 }

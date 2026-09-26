@@ -1,36 +1,38 @@
 .login-box{
-    background-color: #ffe6ef;
-    padding: 45px;
+    padding: 25px;
+    background-color: #ffe6f0;
     border-radius: 20px;
+    margin-top: 20px;
 
 }
 
 .login-box h2 {
-    color: #5b1735;
+    font-size: 26px;
     font-weight: bold;
 }
 
 .form-label {
-    color: #5b1735;
-    font-weight: bold;
+   font-size: 16px;
+    font-weight: 600;
 }
 
 .form-control{
-    background-color: #fff3f7;
+    border-radius: 10px;
+    background-color: #fff7fa;
 }
 
 .login-button{
     width: 100%;
-    background-color: #8f164d;
+    background-color: #6b123d;
     color: white;
     border: none;
     padding: 12px;
-    border-radius: 8px;
-    font-weight: bold;
+    border-radius: 10px;
+    font-weight: 600;
 }
 
 .login-button:hover {
-    background-color: #76123f;
+    background-color: #85194d;
 }
 
 .password-field {
