@@ -1,21 +1,31 @@
-foodiefeed
+###foodiefeed
 
 Bei foodiefeed handelt es sich um eine persönliche Web-Anwendung, um eigene Food-Spots und Entdeckungen in Berlin festzuhalten, zu speichern und zu verwalten.
 
 
-Funktionen
+##Funktionen
 
 Hier sind die wichtigsten Funktionen der Website im Überblick:
-	• Reviews erfassen: Du kannst neue Cafés, Restaurants, Lernspots oder Imbisse mit Name, Kategorie, Stadtteil, Bewertung , Kommentaren, Fotos und dem Besuchsdatum abspeichern.
 
-	• Empfehlungen markieren: Du kannst angeben, ob du den jeweiligen Food-Spot weiterempfehlen würdest oder nicht.
+- Reviews erfassen: Du kannst neue Cafés, Restaurants, Lernspots oder Imbisse mit Name, Kategorie, Stadtteil, Bewertung , Kommentaren, Fotos und dem Besuchsdatum abspeichern.
 
-	• Übersicht behalten: Unter „Meine Reviews“ werden alle deine gespeicherten Einträge übersichtlich aufgelistet, inklusive Bearbeiten- und Löschen-Funktion.
+- Empfehlungen markieren: Du kannst angeben, ob du den jeweiligen Food-Spot weiterempfehlen würdest oder nicht.
 
+- Übersicht behalten: Unter „Meine Reviews“ werden alle deine gespeicherten Einträge übersichtlich aufgelistet, inklusive Bearbeiten- und Löschen-Funktion.
 
+Home-Page
 ![Home-Page](image-1.png)
+
+Review hinzufügen
 ![Hinzufügen](image.png)
-![Login, Fehlermeldung](image-2.png)
+
+Meine Reviews
+![Reviews](image-4.png)
+
+Login, Fehlermeldung
+![Login](image-2.png)
+
+Registrieren
 ![Registrierung](image-3.png)
 
 
@@ -37,6 +47,7 @@ Hier sind die wichtigsten Funktionen der Website im Überblick:
 ### Datenbank
 
 * PostgreSQL
+
 
 
 ## Installation
@@ -95,8 +106,9 @@ Anschließend kann foodiefeed im Browser unter `http://localhost:4200` geöffnet
 
 
 Bei der Erstellung von foodiefeed kam KI gezielt als technischer und kreativer Assistent zum Einsatz:
-	• Design & Logo: Für das visuelle Konzept und die Gestaltung des Logos wurde Gemini genutzt. 
 
-	• Code & Programmierung: Immer wenn es im Programmierprozess nicht weiterging oder unklar war, wie bestimmte Funktionen umzusetzen sind, half ChatGPT mit Lösungsansätzen weiter. Auch wenn wir Fehler hatten und diese nicht zu lösen wussten, unterstütze uns KI.
+- Design & Logo: Für das visuelle Konzept und die Gestaltung des Logos wurde Gemini genutzt. 
 
-	• Fehlersuche (Debugging): Trat ein Fehler im Code auf, wurde ChatGPT verwendet, um das Problem zu analysieren und direkt zu beheben.
+- Code & Programmierung: Immer wenn es im Programmierprozess nicht weiterging oder unklar war, wie bestimmte Funktionen umzusetzen sind, half ChatGPT mit Lösungsansätzen weiter. Auch wenn wir Fehler hatten und diese nicht zu lösen wussten, unterstütze uns KI.
+
+-  Fehlersuche (Debugging): Trat ein Fehler im Code auf, wurde ChatGPT verwendet, um das Problem zu analysieren und direkt zu beheben.
