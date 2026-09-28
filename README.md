@@ -1,9 +1,9 @@
-###foodiefeed
+### foodiefeed
 
 Bei foodiefeed handelt es sich um eine persönliche Web-Anwendung, um eigene Food-Spots und Entdeckungen in Berlin festzuhalten, zu speichern und zu verwalten.
 
 
-##Funktionen
+## Funktionen
 
 Hier sind die wichtigsten Funktionen der Website im Überblick:
 
@@ -13,20 +13,32 @@ Hier sind die wichtigsten Funktionen der Website im Überblick:
 
 - Übersicht behalten: Unter „Meine Reviews“ werden alle deine gespeicherten Einträge übersichtlich aufgelistet, inklusive Bearbeiten- und Löschen-Funktion.
 
-Home-Page
+## Home-Page:
+
 ![Home-Page](image-1.png)
 
-Review hinzufügen
+## Review hinzufügen:
+
 ![Hinzufügen](image.png)
+![Kategorie](image-5.png)
+![Stadtteil](image-6.png)
+![Bewertung](image-7.png)
+![Datum](image-8.png)
 
-Meine Reviews
-![Reviews](image-4.png)
+## Meine Reviews:
 
-Login, Fehlermeldung
+![Reviews](image-9.png)
+
+## Login, Fehlermeldung:
+
 ![Login](image-2.png)
 
-Registrieren
+## Registrierung:
+
 ![Registrierung](image-3.png)
+
+
+
 
 
 ## Verwendete Technologien
@@ -47,6 +59,8 @@ Registrieren
 ### Datenbank
 
 * PostgreSQL
+
+
 
 
 
@@ -104,6 +118,8 @@ ng serve
 
 Anschließend kann foodiefeed im Browser unter `http://localhost:4200` geöffnet werden.
 
+
+## Verwendung
 
 Bei der Erstellung von foodiefeed kam KI gezielt als technischer und kreativer Assistent zum Einsatz:
 
