@@ -1,59 +1,102 @@
-# Foodiefeed
+foodiefeed
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.13.
+Bei foodiefeed handelt es sich um eine persönliche Web-Anwendung, um eigene Food-Spots und Entdeckungen in Berlin festzuhalten, zu speichern und zu verwalten.
 
-## Development server
 
-To start a local development server, run:
+Funktionen
 
-```bash
+Hier sind die wichtigsten Funktionen der Website im Überblick:
+	• Reviews erfassen: Du kannst neue Cafés, Restaurants, Lernspots oder Imbisse mit Name, Kategorie, Stadtteil, Bewertung , Kommentaren, Fotos und dem Besuchsdatum abspeichern.
+
+	• Empfehlungen markieren: Du kannst angeben, ob du den jeweiligen Food-Spot weiterempfehlen würdest oder nicht.
+
+	• Übersicht behalten: Unter „Meine Reviews“ werden alle deine gespeicherten Einträge übersichtlich aufgelistet, inklusive Bearbeiten- und Löschen-Funktion.
+
+
+![Home-Page](image-1.png)
+![Hinzufügen](image.png)
+![Login, Fehlermeldung](image-2.png)
+![Registrierung](image-3.png)
+
+
+## Verwendete Technologien
+
+### Frontend
+
+* Angular
+* TypeScript
+* HTML
+* CSS
+* Bootstrap
+
+### Backend
+
+* Node.js
+* Express
+
+### Datenbank
+
+* PostgreSQL
+
+
+## Installation
+
+### Voraussetzungen
+
+Um foodiefeed lokal auszuführen, werden folgende Programme benötigt:
+
+* Node.js
+* npm
+* PostgreSQL
+
+### 1. Projekt herunterladen
+
+Frontend- und Backend-Repository klonen.
+
+### 2. Abhängigkeiten installieren
+
+Im Frontend-Ordner:
+
+```
+npm install
+```
+
+Im Backend-Ordner:
+
+```
+npm install
+```
+
+### 3. Datenbank einrichten
+
+PostgreSQL starten und die Datenbank für foodiefeed einrichten.
+
+Die benötigten Datenbank-Zugangsdaten werden im Backend in der `.env`-Datei hinterlegt.
+
+### 4. Backend starten
+
+Im Backend-Ordner:
+
+```
+node server.js
+```
+
+Das Backend läuft auf Port `3000`.
+
+### 5. Frontend starten
+
+Im Frontend-Ordner:
+
+```
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Anschließend kann foodiefeed im Browser unter `http://localhost:4200` geöffnet werden.
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Bei der Erstellung von foodiefeed kam KI gezielt als technischer und kreativer Assistent zum Einsatz:
+	• Design & Logo: Für das visuelle Konzept und die Gestaltung des Logos wurde Gemini genutzt. 
 
-```bash
-ng generate component component-name
-```
+	• Code & Programmierung: Immer wenn es im Programmierprozess nicht weiterging oder unklar war, wie bestimmte Funktionen umzusetzen sind, half ChatGPT mit Lösungsansätzen weiter. Auch wenn wir Fehler hatten und diese nicht zu lösen wussten, unterstütze uns KI.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+	• Fehlersuche (Debugging): Trat ein Fehler im Code auf, wurde ChatGPT verwendet, um das Problem zu analysieren und direkt zu beheben.
