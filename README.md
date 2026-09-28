@@ -1,4 +1,4 @@
-### foodiefeed
+# foodiefeed
 
 Bei foodiefeed handelt es sich um eine persönliche Web-Anwendung, um eigene Food-Spots und Entdeckungen in Berlin festzuhalten, zu speichern und zu verwalten.
 
@@ -28,6 +28,10 @@ Hier sind die wichtigsten Funktionen der Website im Überblick:
 ## Meine Reviews:
 
 ![Reviews](image-9.png)
+
+## Review Löschen/Bearbeiten:
+
+![alt text](image-10.png)
 
 ## Login, Fehlermeldung:
 
@@ -128,3 +132,5 @@ Bei der Erstellung von foodiefeed kam KI gezielt als technischer und kreativer A
 - Code & Programmierung: Immer wenn es im Programmierprozess nicht weiterging oder unklar war, wie bestimmte Funktionen umzusetzen sind, half ChatGPT mit Lösungsansätzen weiter. Auch wenn wir Fehler hatten und diese nicht zu lösen wussten, unterstütze uns KI.
 
 -  Fehlersuche (Debugging): Trat ein Fehler im Code auf, wurde ChatGPT verwendet, um das Problem zu analysieren und direkt zu beheben.
+
+Erstellt von Mina Ranjbaryan und Dania Moshtaha
