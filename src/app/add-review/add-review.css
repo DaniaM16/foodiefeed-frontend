@@ -1,3 +1,5 @@
+
+/* Styling für den Bereich des Formulars */
 .review-box {
     padding: 30px;
     background-color: #ffe6f0;
@@ -5,20 +7,20 @@
     margin-top: 40px;
 }
 .review-box h2 {
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-bottom: 5px; /* Abstand */
+    font-weight: bold; /* macht Schrift fett*/
 
 }
 .review-box p {
     margin-bottom: 25px;
 }
 .form-control,
-.form-select {
-    border-radius: 10px;
+.form-select { /* Style für Eingabefelder und Auswahlfelder */
+    border-radius: 10px; /* rundet Ecken */
     background-color: #fff7fa;
-}
+} 
 textarea {
-    resize: none;
+    resize: none; /* verhindert, dass das Textfeld mit der Maus vergrößert wird */
 }
 .save-button {
     width: 100%;
@@ -29,10 +31,10 @@ textarea {
     color: white;
     font-weight: 600;
 }
-.save-button:hover {
+.save-button:hover { /* Styl, wenn Maus über dem Speichern-Buttin ist */
     background-color: #85194d;
 }
-.form-label {
+.form-label { /* Beschriftungen der Formularfelder */
     font-size: 18px;
     font-weight: 600;
 }

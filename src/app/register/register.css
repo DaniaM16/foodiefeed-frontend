@@ -21,7 +21,7 @@
     background-color: #fff7fa;
 }
 
-.login-button{
+.login-button{ /* Button nimmt gesamte verfügbare Breite ein*/
     width: 100%;
     background-color: #6b123d;
     color: white;
@@ -45,6 +45,6 @@
     top: 50%;
     transform: translateY(-50%);
     border: none;
-    background: transparent;
+    background: transparent; /* durchsichtig*/ 
     cursor: pointer;
 }

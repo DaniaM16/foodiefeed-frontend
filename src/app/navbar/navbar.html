@@ -5,14 +5,14 @@
         <img src="/foodiefeed-logo.png" alt="foodiefeed Logo"> </a>
 
 
-<div class="collapse navbar-collapse foodie-nav-wrapper" id="navbarNav">
+<div class="collapse navbar-collapse foodie-nav-wrapper" id="navbarNav"> <!--Bereich in der sich die Nav Links befinden-->
 
-<div class="navbar-nav ms-auto foodie-nav-list">
+<div class="navbar-nav ms-auto foodie-nav-list"> 
     <a class="foodie-nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">💋 Home</a>
     <a class="foodie-nav-link" routerLink="/reviews" routerLinkActive="active">👀 Meine Reviews</a>
     <a class="foodie-nav-link" routerLink="/add-review" routerLinkActive="active">+ Review hinzufügen</a>
     
-@if (isLoggedIn()) {
+@if (isLoggedIn()) { <!-- prüft ob Benutzer eingeloggt ist und Abmelden wird angezeigt-->
     <a class="foodie-nav-link" (click)="logout()">
         👤 Abmelden
     </a>

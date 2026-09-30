@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Route, Router, RouterLink, RouterLinkActive } from "@angular/router";
+import { Router, RouterLink, RouterLinkActive } from "@angular/router";
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +7,7 @@ import { Route, Router, RouterLink, RouterLinkActive } from "@angular/router";
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
-export class Navbar {
+export class Navbar { // bindet Router ein, damit man später zu einer anderen Seite wechseln kann
   constructor(private router: Router) {}
 
   isLoggedIn():boolean {

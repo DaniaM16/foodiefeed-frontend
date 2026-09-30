@@ -1,4 +1,4 @@
-<form [formGroup]="form">
+<form [formGroup]="form"> <!-- Verbindet d. HTML-Formular mit d. Formular "form" aus register.ts-->
 
     <div class="container py-5">
         <div class="row justify-content-center">
@@ -10,14 +10,14 @@
 
                     <div class="mb-3">
                         <label for="email" class="form-label">E-Mail</label>
-
+                        <!--eControl verbindet d. Feld mit d. Formular in register.ts-->
                         <input type="email"
                         id="email"
                         class="form-control"
                         formControlName="emailControl"
                         placeholder="E-Mail eingeben">
                     </div>
-
+                    <!-- Fehlermeldung wird angezeigt, wenn d. Feld bereits berührt wurde u. d. Eingabe ungültig ist-->
                     @if (form.controls.emailControl.touched && form.controls.emailControl.invalid) {
                         <p class="text-danger">Bitte gültige E-Mail eingeben</p>
                     }
@@ -26,14 +26,14 @@
                         <label for="password" class="form-label">Passwort</label>
 
                         <div class="password-field">
-
+                            <!-- true= Passwort sichtbar, false= Passwort versteckt -->
                         <input 
                         [type]="showPassword ? 'text' : 'password'"
                         id="password"
                         class="form-control"
                         formControlName="passwordControl"
                         placeholder="Passwort eingeben">
-
+                        <!-- Beim Klick wird showPassword umgedreht, damit d. Passwort ein-/ausgeblendet wird-->
                         <button
                         type="button"
                         class="password-eye"
@@ -42,21 +42,22 @@
                     </button>
                         </div>
                     </div>
-
+                    <!-- Fehlermeldung bei einem ungültigen Passwort-->
                     @if (form.controls.passwordControl.touched && form.controls.passwordControl.invalid) {
                         <p class="text-danger">Passwort muss mindestens 8 Zeichen haben</p>
                     }
+                    <!-- Beim Klick wird register() aus register.ts ausgeführt-->
                     <button 
                     type="button"
                     class="login-button"
                     (click)="register()">
                     Registrieren
                 </button>
-
+                <!-- wird nur angezeigt, wenn in register.ts eine Fehlermeldung gespeichert wurde -->
                 @if (errorMessage) {
                     <p class="text-danger mt-2">{{ errorMessage }} </p>
                 }
-
+                <!-- gibt den Inhalt d. Variable im HTML aus-->
                 </div> 
 
             </div>

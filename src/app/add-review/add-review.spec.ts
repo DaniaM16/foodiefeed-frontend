@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddReview } from './add-review';
 
@@ -20,3 +20,6 @@ describe('AddReview', () => {
     expect(component).toBeTruthy();
   });
 });
+   
+
+/* test, automatisch */ 

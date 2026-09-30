@@ -3,17 +3,17 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
+    height: auto; 
     background-color: #f6eef3;
 
-    background-image: 
+    background-image: /* Notizblock Design*/
     repeating-linear-gradient(
             to bottom,
             transparent 0,
             transparent 27px,
             rgba(145, 190, 205, 0.15) 30px
         ),
-        linear-gradient(
+        linear-gradient( 
             to right,
             transparent 0,
             transparent 72px,
@@ -24,7 +24,7 @@
     
 
     border-right: 1px solid pink;
-    z-index: 1000;
+    z-index: 1000; /* Navbar steht im Vordergrund*/
     padding: 0;
 
     display: block;
@@ -34,7 +34,7 @@
         position: relative;
         z-index: 1;
         display: flex;
-        flex-direction: column;
+        flex-direction: column; /* Elemente werden untereinander angeordnet*/
         align-items: stretch;
         justify-content: flex-start;
         padding: 20px 0;
@@ -59,7 +59,7 @@
         gap: 10px;
     }
 
-    .foodie-nav-link {
+    .foodie-nav-link { /* Aussehen der Navigationslinks*/
         color: var(--text);
         padding: 20px 35px !important;
         font-size: 17px;
@@ -73,7 +73,7 @@
     }
 
 
-    .foodie-sidebar .foodie-nav-link {
+    .foodie-sidebar .foodie-nav-link { /* genaue gestaltung der links*/
         display: flex;
         align-items: center;
         min-height: 82px;
@@ -91,7 +91,7 @@
 
     }
 
-     .foodie-nav-link.active {
+     .foodie-nav-link.active { /* aktuell ausgewählter Link*/
         background-color: var(--lightpink) !important;
     }
     .foodie-logo img {
@@ -101,7 +101,7 @@
     }
 }
 
-    @media screen and (max-width: 991px) {
+    @media screen and (max-width: 991px) { /* Regel für kleinere Bildschirme*/
 
         .foodie-sidebar {
             width: 100%;
@@ -112,7 +112,7 @@
         }
     }
 
-    @media screen and (min-width: 992px) {
+    @media screen and (min-width: 992px) { 
         .foodie-sidebar {
             position: fixed;
             top: 0;

@@ -10,3 +10,5 @@ export interface Review {
   visit_date: string;
   image?: string;
 }
+
+// legt fest, welche daten und Datentypen ein Review enthält

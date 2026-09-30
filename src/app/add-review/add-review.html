@@ -1,15 +1,15 @@
-<h1>  </h1>
 
-<div class="container py-4">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6">
+<!-- Bootstrap für die Seite -->
+<div class="container py-4"> 
+    <div class="row justify-content-center"> <!-- horizontal-->
+        <div class="col-12 col-md-8 col-lg-6"> <!-- breite je Bildschirmgröße-->
 
             <div class="review-box">
                 <h2>Neuen foodie hinzufügen</h2>
 
     
 
-
+<!-- beim Absenden wird save aufgerufen. Für Box, Name--> 
 <form [formGroup]="form" (ngSubmit)="save()">
 <div class="mb-3"> 
     <label for="name" class="form-label"> Name</label>
@@ -21,7 +21,7 @@
 </div>
 
 <div class="row">  
-    <div class="col-md-6 mb-3">
+    <div class="col-md-6 mb-3"> <!--passt sich jeweiligem bildschirm an--> 
     <label for="category" class="form-label">Kategorie</label>
     <select
     id="category" 
@@ -96,13 +96,13 @@
     </div>
 
 
-
+<!--accept beschrönkt auf Bild, also nur Bild-->
 <div class="mb-3">
     <label for="image" class="form-label">Foto</label>
     <input type="file"
     id="image"
     class="form-control"
-    accept="image/*"
+    accept="image/*"  
     (change)="onFileSelected($event)">
 </div>
 
@@ -127,7 +127,7 @@
    Würde ich empfehlen? 
  </label>
     </div>
-
+<!--sendet Formular ab. Damit wird oben ng save ausgelöst- also wenn Formular geschickt wird, führt save aus-->
     <button type="submit" class="save-button">
         Review speichern
     </button>

@@ -1,23 +1,23 @@
-import { Component,HostListener, signal } from '@angular/core';
+import { Component,HostListener, signal } from '@angular/core'; //Grundkomponente d. APp u. HOstListener für Mausbewegungen
 import { RouterOutlet } from '@angular/router';
 import { Navbar } from "./navbar/navbar";
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Navbar],
+  imports: [RouterOutlet, Navbar], //Navbar und RouterOutlet werden in app.html verwendet
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
 
 export class App {
-  protected readonly title = signal('foodiefeed');
+  
 
 
 
-@HostListener('document:mousemove', ['$event'])
+@HostListener('document:mousemove', ['$event']) //reagiert auf jede Mausbewegung auf d. Seite
 mouseMove(event: MouseEvent) {
-  const sparkle = document.createElement('span');
+  const sparkle = document.createElement('span'); //erstellt Glitzer, neues Element
 
   sparkle.innerHTML = '*';
   sparkle.className = 'sparkle';
@@ -30,5 +30,4 @@ mouseMove(event: MouseEvent) {
     sparkle.remove();
   }, 1000);
 }
-
 }

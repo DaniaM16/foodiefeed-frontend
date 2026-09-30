@@ -1,14 +1,15 @@
+//wird benötigt, um Router im Guard zu verwenden
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 
-export const authGuard: CanActivateFn = (route, state) => {
+export const authGuard: CanActivateFn = () => { 
+  //schützt Seiten davor, ohne Login geöffnet zu werden
 
   const router = inject(Router);
-  const token = localStorage.getItem('token');
+  const token = localStorage.getItem('token'); //Holt Login-Token aus dem Browser
 
-  if (token) {
+  if (token) { //mit Token kann Seite geöffnet werden
     return true;
-  } else {
-    return router.createUrlTree(['/login']);
   }
+return router.createUrlTree( ['/login']);
 };

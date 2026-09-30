@@ -13,5 +13,4 @@ export const routes: Routes = [
     { path: 'add-review', component: AddReview, canActivate: [authGuard]},
     { path: 'edit-review/:id', component: AddReview, canActivate: [authGuard] },
  { path: 'register', component: Register }
-
 ];

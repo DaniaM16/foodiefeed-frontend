@@ -32,14 +32,14 @@
 }
 
 .password-field {
-    position: relative;
+    position: relative; /* Bezugspunkt für Position fürs Auge*/
 }
 
 .password-eye {
-    position: absolute;
+    position: absolute; /* genaue Position fürs Auge*/
     right: 10px;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%); /* verschiebt Position*/
     border: none;
     background: transparent;
     cursor: pointer;

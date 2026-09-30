@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
-import { email } from '@angular/forms/signals';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms' // für Formular und Überprüfung der Eingaben
 import { Backend } from '../shared/backend';
-import { RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router'; // Link zur Registrierung
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
@@ -15,39 +14,41 @@ export class Login {
     private router: Router 
   ) {}
 
-  form = new FormGroup({
-    emailControl: new FormControl<string>('',[
-      Validators.required,
+  form = new FormGroup({ // erstellt Login Formular
+    emailControl: new FormControl<string>('',[ //eingabefeld darf nicht leer und muss gültig sein
+      Validators.required, 
       Validators.email
     ]),
-    passwordControl: new FormControl<string>('',[
+    passwordControl: new FormControl<string>('',[ //Eingabefeld Passwort
       Validators.required,
-      Validators.minLength(8)
+      Validators.minLength(4)
     ])
   });
 
-  errorMessage = '';
-  showPassword = false;
+  errorMessage = ''; // speichert mögliche fehlermeldung bei login
+  showPassword = false; 
   
 
-  async login() {
+  async login() { // wird beim Einloggen ausgeführt
 
-    if (this.form.invalid) {
+    if (this.form.invalid) { //Prüft ob Formular ungültig ist damit FM angezeigt wird
       this.form.markAllAsTouched();
       return;
     }
-
+    // Holt Passwort und Email aus Formular
     const email = this.form.value.emailControl ?? '';
     const password = this.form.value.passwordControl ?? '';
 
     try {
 
     const result = await this.backend.login(email, password);
-
-    localStorage.setItem('user', JSON.stringify(result.user));
+    
+      //speichert Daten und token des Users
+    localStorage.setItem('user', JSON.stringify(result.user)); 
     localStorage.setItem('token', result.token);
 
-    this.router.navigate(['/reviews']);
+    this.router.navigate(['/reviews']); // nach erfolgreichem login
+
     } catch (error) {
 
       this.errorMessage = 'Login fehlgeschlagen. Email oder Passwort falsch.';

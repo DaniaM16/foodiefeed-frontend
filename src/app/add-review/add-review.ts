@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Backend } from '../shared/backend';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Reviews } from '../reviews/reviews';
+
 
 @Component({
   selector: 'app-add-review',
@@ -12,21 +12,21 @@ import { Reviews } from '../reviews/reviews';
 })
 export class AddReview {
 
-  constructor(
+  constructor(  // die drei werden in Komponente eingebunden
     private backend: Backend,
     private route : ActivatedRoute,
     private router: Router 
   ) {}
 
-  id: string | null = ''
+  id: string | null = null;
 
-selectedFile: File | null = null;
+selectedFile: File | null = null; /* speichert Bild */
 
-onFileSelected(event: Event) {
+onFileSelected(event: Event) {  // wird aufgerufen, wenn ein Bild ausgewählt wird
   const input = event.target as HTMLInputElement;
 
-  if (input.files && input.files.length > 0) {
-    this.selectedFile = input.files[0];
+  if (input.files && input.files.length > 0) {  // prüft, ob Datei ausgewählt wurde
+    this.selectedFile = input.files[0]; // speichert Bild
   }
 }
 
@@ -34,7 +34,7 @@ onFileSelected(event: Event) {
     this.id = this.route.snapshot.paramMap.get('id');
     console.log('ID aus URL:', this.id);
     
-    if (this.id) {
+    if (this.id) {  // wenn ID vorhanden ist, wird ein bestehendes Review bearbeitet
       this.backend.getOne(this.id)
       .then(review => {
         console.log('Geladenes Review', review);
@@ -52,7 +52,7 @@ onFileSelected(event: Event) {
   }
 
 
-  form = new FormGroup({
+  form = new FormGroup({  
     nameControl: new FormControl<string>(''),
     categoryControl: new FormControl<string>(''),
     districtControl: new FormControl<string>(''),
@@ -76,7 +76,7 @@ onFileSelected(event: Event) {
       visit_date: this.form.value.dateControl ?? ''
     };
 
-    if (this.id) {
+    if (this.id) { // wenn ID vorhanden ist, bearbeiten wir vorhandenes Review
       await this.backend.updateOne(this.id, review, this.selectedFile);
     } else {
       await this.backend.create(review, this.selectedFile);
